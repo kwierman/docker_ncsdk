@@ -1,7 +1,7 @@
 # docker_ncsdk
 Dockerfile for running software on the Movidius Neural Compute Stick
 
-
+Dockerhub page: https://hub.docker.com/r/kwierman/movidius/
 
 ## Installation
 
