@@ -18,5 +18,5 @@ docker run -t -i -v /dev/bus/usb:/dev/bus/usb kwierman/movidius bash
 For jupyter-notebook:
 
 ~~~ bash
-docker run -t -i -v /dev/bus/usb:/dev/bus/usb -p 8888:8888 kwierman/movidius bash
+docker run -t -i -v /dev/bus/usb:/dev/bus/usb -p 8888:8888 kwierman/movidius jupyter-notebook
 ~~~
