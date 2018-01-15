@@ -9,6 +9,17 @@ Dockerhub page: https://hub.docker.com/r/kwierman/movidius/
 docker build -t kwierman/movidius .
 ~~~
 
+### Bugfix
+
+If the NCS is plugged into USB3.0, then when it switches modes, the docker image loses the connection. To fix this, add these lines the file: `/workspace/ncsdk/api/src/usb_boot.c`, inside the function `usb_find_device` after variable declaration, but before the rest of the code.
+
+~~~ c
+        libusb_exit(NULL);
+        libusb_init(NULL);
+~~~
+
+This fix is due to the discussion [here](https://ncsforum.movidius.com/discussion/394/ncs-access-in-a-docker-container-in-virtualbox-on-mac-osx). For whatever odd reason, Movidius is making it VERY difficult to see this thread, so the page may 404 on you.
+
 ## Usage
 
 ~~~ bash
